@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OpenClaw Workshops | Powered by Nebius AI Cloud",
+  title: "Claw Camp | OpenClaw Workshops Powered by Nebius AI Cloud",
   description:
     "Hands-on workshops for deploying real AI agents with OpenClaw and Nebius infrastructure. From local-first setups to dedicated GPUs, Kubernetes, and robotics.",
 };

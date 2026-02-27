@@ -1,15 +1,22 @@
 import Link from "next/link";
 
-function NebiusLogo({ className = "w-8 h-8" }: { className?: string }) {
+function LobsterLogo({ className = "w-8 h-8" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100" height="100" rx="20" fill="#BAFF00" />
-      <path
-        d="M30 75V40C30 33.4 35.4 28 42 28C48.6 28 54 33.4 54 40V60C54 66.6 59.4 72 66 72C72.6 72 78 66.6 78 60V25"
-        stroke="#0A1628"
-        strokeWidth="12"
-        strokeLinecap="round"
-      />
+    <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="32" cy="36" rx="10" ry="14" fill="#BAFF00" />
+      <circle cx="32" cy="20" r="8" fill="#BAFF00" />
+      <circle cx="28.5" cy="18" r="1.5" fill="#0A1628" />
+      <circle cx="35.5" cy="18" r="1.5" fill="#0A1628" />
+      <path d="M22 30 L12 24 L8 28 L14 30 L12 34 L8 30 L4 34 L14 36 L22 34Z" fill="#BAFF00" stroke="#0A1628" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M42 30 L52 24 L56 28 L50 30 L52 34 L56 30 L60 34 L50 36 L42 34Z" fill="#BAFF00" stroke="#0A1628" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M28 13 Q24 4 18 2" stroke="#BAFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M36 13 Q40 4 46 2" stroke="#BAFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M26 48 L32 54 L38 48" stroke="#BAFF00" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M24 52 L32 60 L40 52" stroke="#BAFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <line x1="26" y1="38" x2="20" y2="44" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="26" y1="42" x2="20" y2="48" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="38" y1="38" x2="44" y2="44" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="38" y1="42" x2="44" y2="48" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -21,9 +28,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <NebiusLogo className="w-8 h-8" />
+              <LobsterLogo className="w-8 h-8" />
               <span className="text-lg font-semibold text-white">
-                nebius<span className="text-nebius-lime">.builders</span>
+                Claw<span className="text-nebius-lime"> Camp</span>
               </span>
             </div>
             <p className="text-sm text-nebius-text-muted leading-relaxed">
@@ -63,7 +70,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-nebius-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-nebius-text-dim">&copy; 2026 nebius.builders &mdash; Powered by Nebius AI Cloud. All rights reserved.</p>
+          <p className="text-xs text-nebius-text-dim">&copy; 2026 Claw Camp &mdash; Powered by Nebius AI Cloud. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-nebius-text-dim hover:text-nebius-text-muted transition-colors">Privacy Policy</a>
             <a href="#" className="text-xs text-nebius-text-dim hover:text-nebius-text-muted transition-colors">Terms of Service</a>

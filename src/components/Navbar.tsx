@@ -5,16 +5,31 @@ import { useState } from "react";
 
 const REGISTER_URL = "https://cerebralvalley.ai/e/nebius-build-sf";
 
-function NebiusLogo({ className = "w-8 h-8" }: { className?: string }) {
+function LobsterLogo({ className = "w-8 h-8" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="200" height="200" rx="40" fill="#BAFF00" />
-      <path
-        d="M56 150V82C56 65.4 69.4 52 86 52C102.6 52 116 65.4 116 82V118C116 134.6 129.4 148 146 148C162.6 148 176 134.6 176 118V50"
-        stroke="#0A1628"
-        strokeWidth="24"
-        strokeLinecap="round"
-      />
+    <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Body */}
+      <ellipse cx="32" cy="36" rx="10" ry="14" fill="#BAFF00" />
+      {/* Head */}
+      <circle cx="32" cy="20" r="8" fill="#BAFF00" />
+      {/* Eyes */}
+      <circle cx="28.5" cy="18" r="1.5" fill="#0A1628" />
+      <circle cx="35.5" cy="18" r="1.5" fill="#0A1628" />
+      {/* Left claw */}
+      <path d="M22 30 L12 24 L8 28 L14 30 L12 34 L8 30 L4 34 L14 36 L22 34Z" fill="#BAFF00" stroke="#0A1628" strokeWidth="1.5" strokeLinejoin="round" />
+      {/* Right claw */}
+      <path d="M42 30 L52 24 L56 28 L50 30 L52 34 L56 30 L60 34 L50 36 L42 34Z" fill="#BAFF00" stroke="#0A1628" strokeWidth="1.5" strokeLinejoin="round" />
+      {/* Antennae */}
+      <path d="M28 13 Q24 4 18 2" stroke="#BAFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M36 13 Q40 4 46 2" stroke="#BAFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+      {/* Tail segments */}
+      <path d="M26 48 L32 54 L38 48" stroke="#BAFF00" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M24 52 L32 60 L40 52" stroke="#BAFF00" strokeWidth="2" strokeLinecap="round" fill="none" />
+      {/* Legs */}
+      <line x1="26" y1="38" x2="20" y2="44" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="26" y1="42" x2="20" y2="48" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="38" y1="38" x2="44" y2="44" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="38" y1="42" x2="44" y2="48" stroke="#BAFF00" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -26,9 +41,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-nebius-border bg-nebius-dark/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <NebiusLogo className="w-8 h-8" />
+          <LobsterLogo className="w-9 h-9" />
           <span className="text-lg font-semibold text-white">
-            nebius<span className="text-nebius-lime">.builders</span>
+            Claw<span className="text-nebius-lime"> Camp</span>
           </span>
         </Link>
 

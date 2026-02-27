@@ -1161,7 +1161,7 @@ export const workshops: Workshop[] = [
     badge: "Workshop",
     badgeColor: "badge-lime",
     title: "OpenClaw on Nebius Cloud VM",
-    subtitle: "One-Click AI Agents. No Terminal. No DevOps. No Laptop Awake.",
+    subtitle: "One-Click AI Agents. No Terminal. No DevOps. Runs 24/7.",
     tagline: "Deploy real AI agents in one click. Let them run 24/7 while you sleep.",
     description:
       "Deploy real AI agents with one click on a Nebius CPU-only VM — no terminal commands, no infra setup, no DevOps, no keeping a laptop awake. This isn't about flashy demos. It's about agents that actually run tasks on your behalf, 24/7, on cloud machines. Learn how agent templates work, how to publish workflows and get paid when others use them, and how software that acts on your behalf changes what work looks like.",
