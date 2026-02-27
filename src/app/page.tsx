@@ -6,6 +6,15 @@ import { workshops } from "@/data/workshops";
 
 const REGISTER_URL = "https://cerebralvalley.ai/e/nebius-build-sf";
 
+const levelOrder: Record<string, number> = {
+  Beginner: 0,
+  Intermediate: 1,
+  Advanced: 2,
+};
+const sortedWorkshops = [...workshops].sort(
+  (a, b) => (levelOrder[a.level] ?? 99) - (levelOrder[b.level] ?? 99)
+);
+
 const badgeIcons: Record<string, React.ReactNode> = {
   shield: (
     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
@@ -25,6 +34,11 @@ const badgeIcons: Record<string, React.ReactNode> = {
   robot: (
     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L3.07 12.9a1.5 1.5 0 001.06 2.56h1.5m-1.5-2.56l6.36-6.36m5.1 5.1l5.1-5.1m0 0L17.93 7.1a1.5 1.5 0 00-1.06 2.56h-1.5m1.5-2.56l-6.36 6.36M12 21a9 9 0 110-18 9 9 0 010 18z" />
+    </svg>
+  ),
+  cloud: (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
     </svg>
   ),
 };
@@ -54,8 +68,8 @@ export default function Home() {
             </h1>
 
             <p className="text-xl text-nebius-text-muted max-w-2xl mb-10 leading-relaxed">
-              Four hands-on workshops designed for builders who want agents that actually run —
-              not just sound impressive. From local-first open-model setups to dedicated GPUs,
+              Five hands-on workshops designed for builders who want agents that actually run —
+              not just sound impressive. From one-click cloud deploys to dedicated GPUs,
               Kubernetes at scale, and robotics.
             </p>
 
@@ -95,7 +109,7 @@ export default function Home() {
       <section className="border-b border-nebius-border bg-nebius-darker py-8">
         <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">4</div>
+            <div className="text-3xl font-bold text-white">5</div>
             <div className="text-sm text-nebius-text-muted mt-1">Workshops</div>
           </div>
           <div className="text-center">
@@ -108,7 +122,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-white">5</div>
-            <div className="text-sm text-nebius-text-muted mt-1">Mentors On-Site</div>
+            <div className="text-sm text-nebius-text-muted mt-1">Mentors Online</div>
           </div>
         </div>
       </section>
@@ -125,7 +139,7 @@ export default function Home() {
             {[
               {
                 title: "Guided Setup",
-                desc: "Step-by-step installation and configuration with mentors walking every table.",
+                desc: "Step-by-step installation and configuration with live mentor support.",
                 icon: (
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1M6.32 10.07L3.07 12.9a1.5 1.5 0 001.06 2.56h1.5m-1.5-2.56l6.36-6.36" />
@@ -150,33 +164,6 @@ export default function Home() {
                   </svg>
                 ),
               },
-              {
-                title: "One-Click Deploy",
-                desc: "ClawdBody lets you deploy agents to cloud machines. No terminal, no DevOps, no laptop awake.",
-                icon: (
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Agent Marketplace",
-                desc: "Publish your workflows and get paid when others use them. Skills as commodities.",
-                icon: (
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Mac Mini Giveaway",
-                desc: "We're giving away a Mac mini to a lucky participant. RSVP required to enter.",
-                icon: (
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
-                  </svg>
-                ),
-              },
             ].map((item, i) => (
               <div
                 key={i}
@@ -198,8 +185,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Workshops</h2>
           <p className="text-lg text-nebius-text-muted max-w-2xl mb-12">
-            Four tracks covering the full spectrum — from beginner-friendly local setups to
-            production Kubernetes and physical robotics.
+            Five tracks covering the full spectrum — from one-click cloud deploys to dedicated GPUs,
+            production Kubernetes, and physical robotics.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -258,10 +245,10 @@ export default function Home() {
               <thead>
                 <tr className="border-b border-nebius-border">
                   <th className="py-4 px-4 text-sm font-semibold text-nebius-text-muted"></th>
-                  {workshops.map((w) => (
+                  {sortedWorkshops.map((w) => (
                     <th key={w.slug} className="py-4 px-4 text-sm font-semibold text-white">
                       <Link href={`/workshops/${w.slug}`} className="hover:text-nebius-lime transition-colors">
-                        {w.slug === "robotics" ? "Robotics + SO-ARM100" : w.title.split("+")[0].trim()}
+                        {w.slug === "robotics" ? "Robotics + SO-ARM100" : w.slug === "clawd-vm" ? "OpenClaw on Cloud VM" : w.title.split("+")[0].trim()}
                       </Link>
                     </th>
                   ))}
@@ -276,7 +263,7 @@ export default function Home() {
                 ].map((row) => (
                   <tr key={row.label} className="border-b border-nebius-border">
                     <td className="py-4 px-4 text-sm font-medium text-nebius-text-muted">{row.label}</td>
-                    {workshops.map((w) => (
+                    {sortedWorkshops.map((w) => (
                       <td key={w.slug} className="py-4 px-4 text-sm text-nebius-text">
                         {row.key === "level" ? (
                           <span className={w.levelColor}>{w[row.key]}</span>
@@ -300,7 +287,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Schedule</h2>
           <p className="text-lg text-nebius-text-muted max-w-2xl mb-12">
-            Choose one track and go deep. Both formats include live mentor support.
+            Choose one track and go deep. All workshops include live mentor support.
           </p>
 
           <ScheduleTabs />
@@ -313,11 +300,8 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Build?
           </h2>
-          <p className="text-xl text-nebius-text-muted max-w-xl mx-auto mb-4">
+          <p className="text-xl text-nebius-text-muted max-w-xl mx-auto mb-10">
             RSVP required. Spots are limited since we provide hands-on support for every attendee.
-          </p>
-          <p className="text-sm text-nebius-text-dim mb-10">
-            Mac mini giveaway for one lucky registered participant.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

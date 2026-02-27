@@ -34,6 +34,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Workshops</h4>
             <ul className="space-y-3">
+              <li><Link href="/workshops/clawd-vm" className="text-sm text-nebius-text-muted hover:text-white transition-colors">Cloud VM</Link></li>
               <li><Link href="/workshops/local-first" className="text-sm text-nebius-text-muted hover:text-white transition-colors">Local-First + Token Factory</Link></li>
               <li><Link href="/workshops/h200-gpu" className="text-sm text-nebius-text-muted hover:text-white transition-colors">Dedicated H200 GPU</Link></li>
               <li><Link href="/workshops/kubernetes" className="text-sm text-nebius-text-muted hover:text-white transition-colors">Kubernetes</Link></li>
@@ -47,7 +48,7 @@ export default function Footer() {
               <li><a href="https://nebius.com" target="_blank" rel="noopener noreferrer" className="text-sm text-nebius-text-muted hover:text-white transition-colors">Nebius AI Cloud</a></li>
               <li><a href="https://nebius.com/token-factory" target="_blank" rel="noopener noreferrer" className="text-sm text-nebius-text-muted hover:text-white transition-colors">Token Factory</a></li>
               <li><a href="#" className="text-sm text-nebius-text-muted hover:text-white transition-colors">OpenClaw Docs</a></li>
-              <li><a href="#" className="text-sm text-nebius-text-muted hover:text-white transition-colors">ClawdBody</a></li>
+              <li><a href="https://docs.tokenfactory.nebius.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-nebius-text-muted hover:text-white transition-colors">Token Factory Docs</a></li>
             </ul>
           </div>
 
